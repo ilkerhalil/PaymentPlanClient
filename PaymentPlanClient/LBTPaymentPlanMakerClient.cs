@@ -13,7 +13,7 @@
     public class LbtPaymentPlanMakerClient
     {
         readonly private RestClient restClient;
-        public  IRestResponse IRestResponse { get; private set; }
+        public IRestResponse IRestResponse { get; private set; }
         public string ServiceUrl { get; set; }
 
         public LbtPaymentPlanMakerClient(RestClient restClient)
@@ -24,8 +24,8 @@
 
         public PaymentPlanPayTypeResponse GetPaymentPlanTypes(PaymentPlanPayTypeRequest paymentPlanPayTypeRequest)
         {
-            var restRequest = new RestRequest(Resources.LbtPaymentPlanMakerClient_GetPaymentPlanType_Url, Method.GET) { RequestFormat = DataFormat.Json };
-            restRequest.AddBody(paymentPlanPayTypeRequest);
+            var restRequest = new RestRequest(string.Format(Resources.LbtPaymentPlanMakerClient_GetPaymentPlanType_Url,
+                paymentPlanPayTypeRequest.LoanId), Method.GET) { RequestFormat = DataFormat.Json };
             var response = restClient.Execute<PaymentPlanPayTypeResponse>(restRequest);
             IRestResponse = response;
             if (response.Data != null) return response.Data;

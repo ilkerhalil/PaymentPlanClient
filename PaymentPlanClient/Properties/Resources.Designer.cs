@@ -61,7 +61,7 @@ namespace PaymentPlanClient.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to api/PaymentPlan?LoanId={LoanId}.
+        ///   Looks up a localized string similar to /api/PaymentPlan?LoanId={0}.
         /// </summary>
         internal static string LbtPaymentPlanMakerClient_GetPaymentPlanType_Url {
             get {
@@ -70,7 +70,7 @@ namespace PaymentPlanClient.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to api/PaymentPlan.
+        ///   Looks up a localized string similar to /api/PaymentPlan.
         /// </summary>
         internal static string LbtPaymentPlanMakerClient_MakeDraftPaymentPlan_api_PaymentPlan_Url {
             get {
@@ -79,7 +79,7 @@ namespace PaymentPlanClient.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://fb.lbtvarlik.com.tr/lbtwebcentric/api.
+        ///   Looks up a localized string similar to https://fb.lbtvarlik.com.tr/lbtwebcentric.
         /// </summary>
         internal static string LBTPaymentPlanMakerClient_ServiceUrl {
             get {
