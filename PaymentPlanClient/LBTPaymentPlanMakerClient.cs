@@ -13,7 +13,7 @@
     public class LbtPaymentPlanMakerClient
     {
         readonly private RestClient restClient;
-
+        public  IRestResponse IRestResponse { get; private set; }
         public string ServiceUrl { get; set; }
 
         public LbtPaymentPlanMakerClient(RestClient restClient)
@@ -27,6 +27,7 @@
             var restRequest = new RestRequest(Resources.LbtPaymentPlanMakerClient_GetPaymentPlanType_Url, Method.GET) { RequestFormat = DataFormat.Json };
             restRequest.AddBody(paymentPlanPayTypeRequest);
             var response = restClient.Execute<PaymentPlanPayTypeResponse>(restRequest);
+            IRestResponse = response;
             if (response.Data != null) return response.Data;
             throw new Exception(response.Content);
         }
@@ -36,6 +37,7 @@
             var restRequest = new RestRequest(Resources.LbtPaymentPlanMakerClient_MakeDraftPaymentPlan_api_PaymentPlan_Url, Method.PUT) { RequestFormat = DataFormat.Json };
             restRequest.AddBody(draftPaymentPlanDetailRequest);
             var response = restClient.Execute<DraftPaymentPlanDetailResponse>(restRequest);
+            IRestResponse = response;
             if (response.Data != null) return response.Data;
             throw new Exception(response.Content);
         }
@@ -45,6 +47,7 @@
             var restRequest = new RestRequest(Resources.LbtPaymentPlanMakerClient_MakeDraftPaymentPlan_api_PaymentPlan_Url, Method.POST) { RequestFormat = DataFormat.Json };
             restRequest.AddBody(makePaymentPlanRequest);
             var response = restClient.Execute<MakePaymentPlanResponse>(restRequest);
+            IRestResponse = response;
             if (response.Data != null) return response.Data;
             throw new Exception(response.Content);
         }
