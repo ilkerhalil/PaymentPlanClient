@@ -12,7 +12,7 @@
         /// Ödeme planı taslağının detaylarını tutan collection'dır
         /// </summary>
         [DataMember]
-        public IEnumerable<DraftPaymentPlanDetail> DraftPaymentPlanDetailCollection { get; set; }
+        public PaymentPlan PaymentPlan { get; set; }
 
 
     }

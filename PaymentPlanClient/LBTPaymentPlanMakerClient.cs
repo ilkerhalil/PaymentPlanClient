@@ -1,6 +1,7 @@
 ﻿namespace PaymentPlanClient
 {
     using System;
+    using System.Net;
 
     using LBTCustomerCentricWebsite.WebApi2.ViewModel;
 
@@ -24,10 +25,11 @@
 
         public PaymentPlanPayTypeResponse GetPaymentPlanTypes(PaymentPlanPayTypeRequest paymentPlanPayTypeRequest)
         {
-            var restRequest = new RestRequest(string.Format(Resources.LbtPaymentPlanMakerClient_GetPaymentPlanType_Url,
-                paymentPlanPayTypeRequest.LoanId), Method.GET) { RequestFormat = DataFormat.Json };
+            var url = string.Format(Resources.LbtPaymentPlanMakerClient_GetPaymentPlanType_Url, paymentPlanPayTypeRequest.LoanId);
+            var restRequest = new RestRequest(url, Method.GET) { RequestFormat = DataFormat.Json };
             var response = restClient.Execute<PaymentPlanPayTypeResponse>(restRequest);
             IRestResponse = response;
+            if (response.StatusCode != HttpStatusCode.OK) throw new Exception(response.Content);
             if (response.Data != null) return response.Data;
             throw new Exception(response.Content);
         }
