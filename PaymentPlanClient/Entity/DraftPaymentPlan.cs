@@ -1,6 +1,7 @@
 namespace PaymentPlanClient.Entity
 {
     using System.Collections.Generic;
+    using System.Linq;
     using System.Runtime.Serialization;
 
     [DataContract]
@@ -16,7 +17,7 @@ namespace PaymentPlanClient.Entity
             this.ContactId = contactId;
             this.LoanId = loanId;
             this.Tutar = tutar;
-            this.DraftPaymentPlanDetails = draftPaymentPlanDetails;
+            this.DraftPaymentPlanDetails = draftPaymentPlanDetails.ToList();
             this.TaksitSayisi = taksitSayisi;
             this.Bsmv = bsmv;
             this.FaizTutari = faizTutari;
@@ -44,7 +45,7 @@ namespace PaymentPlanClient.Entity
 
 
         [DataMember]
-        public IEnumerable<DraftPaymentPlanDetail> DraftPaymentPlanDetails { get; set; }
+        public List<DraftPaymentPlanDetail> DraftPaymentPlanDetails { get; set; }
         /// <summary>
         /// taksit sayýsý
         /// </summary>
