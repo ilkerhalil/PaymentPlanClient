@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="LbtPaymentPlanMakerClient_GetPaymentPlanType_Url" xml:space="preserve">
-    <value>/api/PaymentPlan?LoanId={0}</value>
+    <value>/PaymentPlan?LoanId={0}</value>
   </data>
   <data name="LbtPaymentPlanMakerClient_MakeDraftPaymentPlan_api_PaymentPlan_Url" xml:space="preserve">
-    <value>/api/PaymentPlan</value>
+    <value>/PaymentPlan</value>
   </data>
   <data name="LBTPaymentPlanMakerClient_ServiceUrl" xml:space="preserve">
     <value>https://fb.lbtvarlik.com.tr/lbtwebcentric</value>
