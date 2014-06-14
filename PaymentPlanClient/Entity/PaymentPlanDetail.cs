@@ -9,26 +9,31 @@ namespace PaymentPlanClient.Entity
         /// <summary>
         /// 
         /// </summary>
+        [DataMember]
         public int PaymentPlanDetailId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [DataMember]
         public decimal TaksitTutari { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [DataMember]
         public DateTime TaksitTarihi { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [DataMember]
         public decimal Odeme { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [DataMember]
         public string Durum { get; set; }
 
         public override string ToString()

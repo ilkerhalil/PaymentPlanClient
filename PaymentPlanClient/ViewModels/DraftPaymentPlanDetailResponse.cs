@@ -1,6 +1,5 @@
 ﻿namespace PaymentPlanClient.ViewModels
 {
-    using System.Collections.Generic;
     using System.Runtime.Serialization;
 
     using PaymentPlanClient.Entity;

@@ -3,8 +3,6 @@
     using System;
     using System.Net;
 
-    using LBTCustomerCentricWebsite.WebApi2.ViewModel;
-
     using PaymentPlanClient.Properties;
     using PaymentPlanClient.ViewModels;
 
@@ -49,6 +47,28 @@
             var restRequest = new RestRequest(Resources.LbtPaymentPlanMakerClient_MakeDraftPaymentPlan_api_PaymentPlan_Url, Method.POST) { RequestFormat = DataFormat.Json };
             restRequest.AddBody(makePaymentPlanRequest);
             var response = restClient.Execute<MakePaymentPlanResponse>(restRequest);
+            IRestResponse = response;
+            if (response.Data != null) return response.Data;
+            throw new Exception(response.Content);
+        }
+
+        public CalculateRefreshPaymentPlanResponse CalculateRefreshPaymentPlan(CalculateRefreshPaymentPlanRequest calculateRefreshPaymentPlanRequest)
+        {
+            var restRequest = new RestRequest(Resources.LbtPaymentPlanMakerClient_RefreshPaymentPlan_api_RefreshPayment_Url,
+                Method.PUT) { RequestFormat = DataFormat.Json };
+            restRequest.AddBody(calculateRefreshPaymentPlanRequest);
+            var response = restClient.Execute<CalculateRefreshPaymentPlanResponse>(restRequest);
+            IRestResponse = response;
+            if (response.Data != null) return response.Data;
+            throw new Exception(response.Content);
+        }
+
+        public RefreshPaymentPlanResponse RefreshPaymentPlan(RefreshPaymentPlanRequest refreshPaymentPlanRequest)
+        {
+            var restRequest = new RestRequest(Resources.LbtPaymentPlanMakerClient_RefreshPaymentPlan_api_RefreshPayment_Url,
+                Method.POST) { RequestFormat = DataFormat.Json };
+            restRequest.AddBody(refreshPaymentPlanRequest);
+            var response = restClient.Execute<RefreshPaymentPlanResponse>(restRequest);
             IRestResponse = response;
             if (response.Data != null) return response.Data;
             throw new Exception(response.Content);

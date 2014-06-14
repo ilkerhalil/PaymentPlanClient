@@ -8,16 +8,13 @@
     /// <summary>
     /// 
     /// </summary>
-    /// 
     [DataContract]
-    public class PaymentPlanPayTypeResponse
+    public class RefreshPaymentPlanResponse
     {
         /// <summary>
         /// 
         /// </summary>
         [DataMember]
-        public List<PaymentPlanPayType> PaymentPlanPayTypes { get; set; }
-
-
+        public List<PaymentPlan> PaymentPlans { get; set; }
     }
 }

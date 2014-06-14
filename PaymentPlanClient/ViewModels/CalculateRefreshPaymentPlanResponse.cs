@@ -1,23 +1,17 @@
 ﻿namespace PaymentPlanClient.ViewModels
 {
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
 
     using PaymentPlanClient.Entity;
 
     /// <summary>
     /// 
     /// </summary>
-    /// 
-    [DataContract]
-    public class PaymentPlanPayTypeResponse
+    public class CalculateRefreshPaymentPlanResponse
     {
         /// <summary>
         /// 
         /// </summary>
-        [DataMember]
-        public List<PaymentPlanPayType> PaymentPlanPayTypes { get; set; }
-
-
+        public IEnumerable<RefreshPaymentPlan> RefreshPaymentPlans { get; set; }
     }
 }

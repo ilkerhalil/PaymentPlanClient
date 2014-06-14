@@ -1,4 +1,4 @@
-﻿namespace LBTCustomerCentricWebsite.WebApi2.ViewModel
+﻿namespace PaymentPlanClient.ViewModels
 {
     using System.Collections.Generic;
     using System.Runtime.Serialization;

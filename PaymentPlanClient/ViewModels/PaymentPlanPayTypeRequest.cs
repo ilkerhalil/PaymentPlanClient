@@ -1,5 +1,7 @@
 namespace PaymentPlanClient.ViewModels
 {
+    using System.Runtime.Serialization;
+
     /// <summary>
     /// 
     /// </summary>
@@ -8,6 +10,7 @@ namespace PaymentPlanClient.ViewModels
         /// <summary>
         /// 
         /// </summary>
+        [DataMember]
         public int LoanId { get; set; }
 
         public override string ToString()

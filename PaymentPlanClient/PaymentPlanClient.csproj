@@ -62,6 +62,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\CalculateRefreshPaymentPlanRequest.cs" />
+    <Compile Include="ViewModels\CalculateRefreshPaymentPlanResponse.cs" />
     <Compile Include="ViewModels\DraftPaymentPlanDetailResponse.cs" />
     <Compile Include="ViewModels\DraftPaymentPlanDetailRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +73,10 @@
     <Compile Include="Entity\PaymentPlan.cs" />
     <Compile Include="ViewModels\PaymentPlanPayTypeRequest.cs" />
     <Compile Include="ViewModels\PaymentPlanPayTypeResponse.cs" />
+    <Compile Include="Entity\RefreshPaymentPlan.cs" />
+    <Compile Include="ViewModels\RefreshPaymentPlanRequest.cs" />
+    <Compile Include="ViewModels\RefreshPaymentPlanResponse.cs" />
+    <Compile Include="Entity\RefreshPaymentPlanType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

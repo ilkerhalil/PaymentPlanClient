@@ -46,6 +46,6 @@
         [DataMember]
         public List<PaymentPlanDetail> PaymentPlanDetails { get; set; }
 
-         
+
     }
 }

@@ -79,6 +79,15 @@ namespace PaymentPlanClient.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to /RefreshPaymentPlan.
+        /// </summary>
+        internal static string LbtPaymentPlanMakerClient_RefreshPaymentPlan_api_RefreshPayment_Url {
+            get {
+                return ResourceManager.GetString("LbtPaymentPlanMakerClient_RefreshPaymentPlan_api_RefreshPayment_Url", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to https://fb.lbtvarlik.com.tr/lbtwebcentric.
         /// </summary>
         internal static string LBTPaymentPlanMakerClient_ServiceUrl {
