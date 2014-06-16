@@ -15,19 +15,19 @@
         /// 
         /// </summary>
         [DataMember]
-        public RefreshPaymentPlanType RefreshPaymentPlanType { get; private set; }
+        public RefreshPaymentPlanType RefreshPaymentPlanType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [DataMember]
-        public DateTime PaymentPlanDate { get; private set; }
+        public DateTime PaymentPlanDate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [DataMember]
-        public int PaymentPlanId { get; private set; }
+        public int PaymentPlanId { get; set; }
 
         /// <summary>
         /// 
