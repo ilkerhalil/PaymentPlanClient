@@ -86,6 +86,7 @@
     <Compile Include="ViewModels\AddressManipulation\IlRequestResponse.cs" />
     <Compile Include="ViewModels\Authentication\AuthTicketRequest.cs" />
     <Compile Include="ViewModels\Authentication\AuthTicketResponse.cs" />
+    <Compile Include="ViewModels\Authentication\LogOutResponse.cs" />
     <Compile Include="ViewModels\ComplaintManipulation\AddComplaintRequest.cs" />
     <Compile Include="ViewModels\ComplaintManipulation\AddComplaintResponse.cs" />
     <Compile Include="ViewModels\ComplaintManipulation\ComplaintResponse.cs" />

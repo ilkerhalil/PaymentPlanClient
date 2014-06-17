@@ -52,6 +52,17 @@
             if (response.Data != null) return response.Data;
             throw new PaymentPlanClientException(response.Content);
         }
+
+        public LogOutResponse LogOut()
+        {
+            var restRequest = new RestRequest(Resources.LBTLoginClient_Url, Method.GET) { RequestFormat = DataFormat.Json };
+            var response = restClient.Execute<LogOutResponse>(restRequest);
+            IRestResponse = response;
+            if (response.StatusCode != HttpStatusCode.OK) throw new PaymentPlanClientException(response.Content);
+            if (response.Data != null) return response.Data;
+            throw new PaymentPlanClientException(response.Content);
+        }
+
         #endregion
 
         #region PaymentPlanManipulation
