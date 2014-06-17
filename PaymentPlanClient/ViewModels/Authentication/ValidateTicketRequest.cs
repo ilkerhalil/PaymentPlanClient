@@ -1,4 +1,4 @@
-namespace PaymentPlanClient.ViewModels
+namespace PaymentPlanClient.ViewModels.Authentication
 {
     using System;
     using System.Runtime.Serialization;

@@ -1,4 +1,4 @@
-﻿namespace PaymentPlanClient.ViewModels
+﻿namespace PaymentPlanClient.ViewModels.Payment
 {
     using System.Collections.Generic;
     using System.Runtime.Serialization;

@@ -61,6 +61,42 @@ namespace PaymentPlanClient.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to /Adress.
+        /// </summary>
+        internal static string LBTAddress_Url {
+            get {
+                return ResourceManager.GetString("LBTAddress_Url", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /Appointment.
+        /// </summary>
+        internal static string LBTAppointment_Url {
+            get {
+                return ResourceManager.GetString("LBTAppointment_Url", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /Complaint.
+        /// </summary>
+        internal static string LBTComplaint_Url {
+            get {
+                return ResourceManager.GetString("LBTComplaint_Url", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /Email.
+        /// </summary>
+        internal static string LBTEmail_Url {
+            get {
+                return ResourceManager.GetString("LBTEmail_Url", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to /Login.
         /// </summary>
         internal static string LBTLoginClient_Url {
@@ -102,6 +138,15 @@ namespace PaymentPlanClient.Properties {
         internal static string LBTPaymentPlanMakerClient_ServiceUrl {
             get {
                 return ResourceManager.GetString("LBTPaymentPlanMakerClient_ServiceUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /Phone.
+        /// </summary>
+        internal static string LBTPhone_Url {
+            get {
+                return ResourceManager.GetString("LBTPhone_Url", resourceCulture);
             }
         }
     }

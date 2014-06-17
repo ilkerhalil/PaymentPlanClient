@@ -55,40 +55,67 @@
   <ItemGroup>
     <Compile Include="Entity\Adress.cs" />
     <Compile Include="Entity\Agent.cs" />
+    <Compile Include="Entity\Appointment.cs" />
     <Compile Include="Entity\CampaignDetail.cs" />
+    <Compile Include="Entity\AppointmentType.cs" />
+    <Compile Include="Entity\Complaint.cs" />
+    <Compile Include="Entity\ComplaintTopic.cs" />
     <Compile Include="Entity\CustomerInfo.cs" />
     <Compile Include="Entity\DraftPaymentPlan.cs" />
     <Compile Include="Entity\DraftPaymentPlanDetail.cs" />
     <Compile Include="Entity\Email.cs" />
     <Compile Include="Entity\EmailType.cs" />
+    <Compile Include="Entity\Il.cs" />
+    <Compile Include="Entity\Ilce.cs" />
     <Compile Include="Entity\Loan.cs" />
     <Compile Include="Entity\PaymentPlanDetail.cs" />
     <Compile Include="Entity\Phone.cs" />
+    <Compile Include="Entity\PhoneType.cs" />
+    <Compile Include="Exception\PaymentPlanClientException.cs" />
     <Compile Include="LBTPaymentPlanMakerClient.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\AuthTicketRequest.cs" />
-    <Compile Include="ViewModels\AuthTicketResponse.cs" />
-    <Compile Include="ViewModels\CalculateRefreshPaymentPlanRequest.cs" />
-    <Compile Include="ViewModels\CalculateRefreshPaymentPlanResponse.cs" />
-    <Compile Include="ViewModels\DraftPaymentPlanDetailResponse.cs" />
-    <Compile Include="ViewModels\DraftPaymentPlanDetailRequest.cs" />
+    <Compile Include="ViewModels\AddressManipulation\AddAdressRequest.cs" />
+    <Compile Include="ViewModels\AddressManipulation\AddAdressResponse.cs" />
+    <Compile Include="ViewModels\AddressManipulation\AddressType.cs" />
+    <Compile Include="ViewModels\AddressManipulation\DeleteAdressRequest.cs" />
+    <Compile Include="ViewModels\AddressManipulation\DeleteAdressResponse.cs" />
+    <Compile Include="ViewModels\AddressManipulation\IlRequestResponse.cs" />
+    <Compile Include="ViewModels\Authentication\AuthTicketRequest.cs" />
+    <Compile Include="ViewModels\Authentication\AuthTicketResponse.cs" />
+    <Compile Include="ViewModels\ComplaintManipulation\AddComplaintRequest.cs" />
+    <Compile Include="ViewModels\ComplaintManipulation\AddComplaintResponse.cs" />
+    <Compile Include="ViewModels\ComplaintManipulation\ComplaintResponse.cs" />
+    <Compile Include="ViewModels\EmailManipulation\AddEmailRequest.cs" />
+    <Compile Include="ViewModels\EmailManipulation\AddEmailResponse.cs" />
+    <Compile Include="ViewModels\EmailManipulation\DeleteEmailRequest.cs" />
+    <Compile Include="ViewModels\EmailManipulation\DeleteEmailResponse.cs" />
+    <Compile Include="ViewModels\AppointmentManipulation\AppointmentRequest.cs" />
+    <Compile Include="ViewModels\AppointmentManipulation\AppointmentResponse.cs" />
+    <Compile Include="ViewModels\Payment\CalculateRefreshPaymentPlanRequest.cs" />
+    <Compile Include="ViewModels\Payment\CalculateRefreshPaymentPlanResponse.cs" />
+    <Compile Include="ViewModels\Payment\DraftPaymentPlanDetailResponse.cs" />
+    <Compile Include="ViewModels\Payment\DraftPaymentPlanDetailRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entity\PaymentPlanPayType.cs" />
-    <Compile Include="ViewModels\MakePaymentPlanRequest.cs" />
-    <Compile Include="ViewModels\MakePaymentPlanResponse.cs" />
+    <Compile Include="ViewModels\Payment\MakePaymentPlanRequest.cs" />
+    <Compile Include="ViewModels\Payment\MakePaymentPlanResponse.cs" />
     <Compile Include="Entity\PaymentPlan.cs" />
-    <Compile Include="ViewModels\PaymentPlanPayTypeRequest.cs" />
-    <Compile Include="ViewModels\PaymentPlanPayTypeResponse.cs" />
+    <Compile Include="ViewModels\Payment\PaymentPlanPayTypeRequest.cs" />
+    <Compile Include="ViewModels\Payment\PaymentPlanPayTypeResponse.cs" />
     <Compile Include="Entity\RefreshPaymentPlan.cs" />
-    <Compile Include="ViewModels\RefreshPaymentPlanRequest.cs" />
-    <Compile Include="ViewModels\RefreshPaymentPlanResponse.cs" />
+    <Compile Include="ViewModels\Payment\RefreshPaymentPlanRequest.cs" />
+    <Compile Include="ViewModels\Payment\RefreshPaymentPlanResponse.cs" />
     <Compile Include="Entity\RefreshPaymentPlanType.cs" />
-    <Compile Include="ViewModels\ValidateTicketRequest.cs" />
-    <Compile Include="ViewModels\ValidateTicketResponse.cs" />
+    <Compile Include="ViewModels\Authentication\ValidateTicketRequest.cs" />
+    <Compile Include="ViewModels\Authentication\ValidateTicketResponse.cs" />
+    <Compile Include="ViewModels\PhoneManipulation\AddPhoneRequest.cs" />
+    <Compile Include="ViewModels\PhoneManipulation\AddPhoneResponse.cs" />
+    <Compile Include="ViewModels\PhoneManipulation\DeletePhoneRequest.cs" />
+    <Compile Include="ViewModels\PhoneManipulation\DeletePhoneResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -100,6 +127,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

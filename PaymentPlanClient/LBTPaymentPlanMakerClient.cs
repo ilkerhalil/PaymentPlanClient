@@ -1,12 +1,19 @@
 ﻿namespace PaymentPlanClient
 {
-    using System;
     using System.Net;
-
+    using LBTCustomerCentricWebsite.WebApi2.ViewModel;
+    using PaymentPlanClient.Exception;
     using PaymentPlanClient.Properties;
-    using PaymentPlanClient.ViewModels;
+    using PaymentPlanClient.ViewModels.AddressManipulation;
+    using PaymentPlanClient.ViewModels.AppointmentManipulation;
+    using PaymentPlanClient.ViewModels.Authentication;
+    using PaymentPlanClient.ViewModels.ComplaintManipulation;
+    using PaymentPlanClient.ViewModels.EmailManipulation;
+    using PaymentPlanClient.ViewModels.Payment;
+    using PaymentPlanClient.ViewModels.PhoneManipulation;
 
     using RestSharp;
+    using RestSharp.Serializers;
 
 
     public class LbtPaymentPlanMakerClient
@@ -15,22 +22,24 @@
         public IRestResponse IRestResponse { get; private set; }
         public string ServiceUrl { get; set; }
 
+        public JsonSerializer JsonSerializer { get; private set; }
+
         public LbtPaymentPlanMakerClient(RestClient restClient)
         {
             this.ServiceUrl = Resources.LBTPaymentPlanMakerClient_ServiceUrl;
             this.restClient = restClient;
+            this.JsonSerializer = new JsonSerializer();
         }
-
-
+        #region Authentication
         public AuthTicketResponse CreateTicket(AuthTicketRequest authTicketRequest)
         {
             var restRequest = new RestRequest(Resources.LBTLoginClient_Url, Method.PUT) { RequestFormat = DataFormat.Json };
             restRequest.AddBody(authTicketRequest);
             var response = restClient.Execute<AuthTicketResponse>(restRequest);
             IRestResponse = response;
-            if (response.StatusCode != HttpStatusCode.OK) throw new Exception(response.Content);
+            if (response.StatusCode != HttpStatusCode.OK) throw new PaymentPlanClientException(response.Content);
             if (response.Data != null) return response.Data;
-            throw new Exception(response.Content);
+            throw new PaymentPlanClientException(response.Content);
         }
 
         public ValidateTicketResponse ValidationTicket(ValidateTicketRequest validateTicketRequest)
@@ -39,10 +48,13 @@
             restRequest.AddBody(validateTicketRequest);
             var response = restClient.Execute<ValidateTicketResponse>(restRequest);
             IRestResponse = response;
-            if (response.StatusCode != HttpStatusCode.OK) throw new Exception(response.Content);
+            if (response.StatusCode != HttpStatusCode.OK) throw new PaymentPlanClientException(response.Content);
             if (response.Data != null) return response.Data;
-            throw new Exception(response.Content);
+            throw new PaymentPlanClientException(response.Content);
         }
+        #endregion
+
+        #region PaymentPlanManipulation
 
         public PaymentPlanPayTypeResponse GetPaymentPlanTypes(PaymentPlanPayTypeRequest paymentPlanPayTypeRequest)
         {
@@ -50,9 +62,9 @@
             var restRequest = new RestRequest(url, Method.GET) { RequestFormat = DataFormat.Json };
             var response = restClient.Execute<PaymentPlanPayTypeResponse>(restRequest);
             IRestResponse = response;
-            if (response.StatusCode != HttpStatusCode.OK) throw new Exception(response.Content);
+            if (response.StatusCode != HttpStatusCode.OK) throw new PaymentPlanClientException(response.Content);
             if (response.Data != null) return response.Data;
-            throw new Exception(response.Content);
+            throw new PaymentPlanClientException(response.Content);
         }
 
         public DraftPaymentPlanDetailResponse MakeDraftPaymentPlan(DraftPaymentPlanDetailRequest draftPaymentPlanDetailRequest)
@@ -62,7 +74,7 @@
             var response = restClient.Execute<DraftPaymentPlanDetailResponse>(restRequest);
             IRestResponse = response;
             if (response.Data != null) return response.Data;
-            throw new Exception(response.Content);
+            throw new PaymentPlanClientException(response.Content);
         }
 
         public MakePaymentPlanResponse MakePaymentPlan(MakePaymentPlanRequest makePaymentPlanRequest)
@@ -72,7 +84,7 @@
             var response = restClient.Execute<MakePaymentPlanResponse>(restRequest);
             IRestResponse = response;
             if (response.Data != null) return response.Data;
-            throw new Exception(response.Content);
+            throw new PaymentPlanClientException(response.Content);
         }
 
         public CalculateRefreshPaymentPlanResponse CalculateRefreshPaymentPlan(CalculateRefreshPaymentPlanRequest calculateRefreshPaymentPlanRequest)
@@ -83,7 +95,7 @@
             var response = restClient.Execute<CalculateRefreshPaymentPlanResponse>(restRequest);
             IRestResponse = response;
             if (response.Data != null) return response.Data;
-            throw new Exception(response.Content);
+            throw new PaymentPlanClientException(response.Content);
         }
 
         public RefreshPaymentPlanResponse RefreshPaymentPlan(RefreshPaymentPlanRequest refreshPaymentPlanRequest)
@@ -94,8 +106,135 @@
             var response = restClient.Execute<RefreshPaymentPlanResponse>(restRequest);
             IRestResponse = response;
             if (response.Data != null) return response.Data;
-            throw new Exception(response.Content);
+            throw new PaymentPlanClientException(response.Content);
         }
+        #endregion
+
+        #region AddressManipulation
+
+        public AddAdressResponse AddAddress(AddAdressRequest addAdressRequest)
+        {
+            var restRequest = new RestRequest(Resources.LBTAddress_Url, Method.POST) { RequestFormat = DataFormat.Json };
+            restRequest.AddBody(addAdressRequest);
+            var response = restClient.Execute<AddAdressResponse>(restRequest);
+            IRestResponse = response;
+            if (response.StatusCode != HttpStatusCode.OK) throw new PaymentPlanClientException(response.Content);
+            if (response.Data != null) return response.Data;
+            throw new PaymentPlanClientException(response.Content);
+        }
+
+        public DeleteAdressResponse DeleteAddress(DeleteAdressRequest deleteAddressRequest)
+        {
+            var restRequest = new RestRequest(Resources.LBTAddress_Url, Method.DELETE) { RequestFormat = DataFormat.Json };
+            restRequest.AddBody(deleteAddressRequest);
+            var response = restClient.Execute<DeleteAdressResponse>(restRequest);
+            IRestResponse = response;
+            if (response.StatusCode != HttpStatusCode.OK) throw new PaymentPlanClientException(response.Content);
+            if (response.Data != null) return response.Data;
+            throw new PaymentPlanClientException(response.Content);
+        }
+
+        public IlRequestResponse GetIlCollection()
+        {
+            var restRequest = new RestRequest(Resources.LBTAddress_Url, Method.GET) { RequestFormat = DataFormat.Json };
+            var response = restClient.Execute<IlRequestResponse>(restRequest);
+            IRestResponse = response;
+            if (response.StatusCode != HttpStatusCode.OK) throw new PaymentPlanClientException(response.Content);
+            if (response.Data != null) return response.Data;
+            throw new PaymentPlanClientException(response.Content);
+        }
+
+        #endregion
+
+        #region EmailManipulation
+        public AddEmailResponse AddEmail(AddEmailRequest addEmailRequest)
+        {
+            var restRequest = new RestRequest(Resources.LBTEmail_Url, Method.POST) { RequestFormat = DataFormat.Json };
+            restRequest.AddBody(addEmailRequest);
+            var response = restClient.Execute<AddEmailResponse>(restRequest);
+            IRestResponse = response;
+            if (response.StatusCode != HttpStatusCode.OK) throw new PaymentPlanClientException(response.Content);
+            if (response.Data != null) return response.Data;
+            throw new PaymentPlanClientException(response.Content);
+        }
+
+        public DeleteEmailResponse DeleteEmail(DeleteEmailRequest deleteEmailRequest)
+        {
+            var restRequest = new RestRequest(Resources.LBTEmail_Url, Method.DELETE) { RequestFormat = DataFormat.Json };
+            restRequest.AddBody(deleteEmailRequest);
+            var response = restClient.Execute<DeleteEmailResponse>(restRequest);
+            IRestResponse = response;
+            if (response.StatusCode != HttpStatusCode.OK) throw new PaymentPlanClientException(response.Content);
+            if (response.Data != null) return response.Data;
+            throw new PaymentPlanClientException(response.Content);
+        }
+
+        #endregion
+
+        #region PhoneManipulation
+        public AddAdressResponse AddPhone(AddPhoneRequest addPhoneRequest)
+        {
+            var restRequest = new RestRequest(Resources.LBTEmail_Url, Method.DELETE) { RequestFormat = DataFormat.Json };
+            restRequest.AddBody(addPhoneRequest);
+            var response = restClient.Execute<AddAdressResponse>(restRequest);
+            IRestResponse = response;
+            if (response.StatusCode != HttpStatusCode.OK) throw new PaymentPlanClientException(response.Content);
+            if (response.Data != null) return response.Data;
+            throw new PaymentPlanClientException(response.Content);
+        }
+
+        public DeletePhoneResponse DeletePhone(DeletePhoneRequest deletePhoneRequest)
+        {
+            var restRequest = new RestRequest(Resources.LBTEmail_Url, Method.DELETE) { RequestFormat = DataFormat.Json };
+            restRequest.AddBody(deletePhoneRequest);
+            var response = restClient.Execute<DeletePhoneResponse>(restRequest);
+            IRestResponse = response;
+            if (response.StatusCode != HttpStatusCode.OK) throw new PaymentPlanClientException(response.Content);
+            if (response.Data != null) return response.Data;
+            throw new PaymentPlanClientException(response.Content);
+        }
+
+        #endregion
+
+        #region ComplaintManipulation
+
+        public ComplaintResponse GetComplaintTopics()
+        {
+            var restRequest = new RestRequest(Resources.LBTComplaint_Url, Method.GET) { RequestFormat = DataFormat.Json };
+            var response = restClient.Get<ComplaintResponse>(restRequest);
+            IRestResponse = response;
+            if (response.StatusCode != HttpStatusCode.OK) throw new PaymentPlanClientException(response.Content);
+            if (response.Data != null) return response.Data;
+            throw new PaymentPlanClientException(response.Content);
+        }
+
+        public AddComplaintResponse AddComplaint(AddComplaintRequest addComplaintRequest)
+        {
+            var restRequest = new RestRequest(Resources.LBTComplaint_Url, Method.POST) { RequestFormat = DataFormat.Json };
+            restRequest.AddBody(addComplaintRequest);
+            var response = restClient.Execute<AddComplaintResponse>(restRequest);
+            IRestResponse = response;
+            if (response.StatusCode != HttpStatusCode.OK) throw new PaymentPlanClientException(response.Content);
+            if (response.Data != null) return response.Data;
+            throw new PaymentPlanClientException(response.Content);
+        }
+
+        #endregion
+
+        #region AppointmentManipulation
+
+        public AppointmentResponse AddAppointment(AppointmentRequest appointmentRequest)
+        {
+            var restRequest = new RestRequest(Resources.LBTAppointment_Url, Method.POST) { RequestFormat = DataFormat.Json };
+            restRequest.AddBody(appointmentRequest);
+            var response = restClient.Execute<AppointmentResponse>(restRequest);
+            IRestResponse = response;
+            if (response.StatusCode != HttpStatusCode.OK) throw new PaymentPlanClientException(response.Content);
+            if (response.Data != null) return response.Data;
+            throw new PaymentPlanClientException(response.Content);
+        }
+
+        #endregion
 
     }
 }

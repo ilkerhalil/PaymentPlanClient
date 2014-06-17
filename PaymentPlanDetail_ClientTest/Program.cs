@@ -7,6 +7,8 @@
     using PaymentPlanClient;
     using PaymentPlanClient.Entity;
     using PaymentPlanClient.ViewModels;
+    using PaymentPlanClient.ViewModels.Authentication;
+    using PaymentPlanClient.ViewModels.Payment;
 
     using RestSharp;
 

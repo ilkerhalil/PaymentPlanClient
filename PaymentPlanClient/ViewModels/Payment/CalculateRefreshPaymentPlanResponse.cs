@@ -1,4 +1,4 @@
-﻿namespace PaymentPlanClient.ViewModels
+﻿namespace PaymentPlanClient.ViewModels.Payment
 {
     using System.Collections.Generic;
     using System.Runtime.Serialization;
@@ -9,12 +9,12 @@
     /// 
     /// </summary>
     [DataContract]
-    public class RefreshPaymentPlanResponse
+    public class CalculateRefreshPaymentPlanResponse
     {
         /// <summary>
         /// 
         /// </summary>
         [DataMember]
-        public List<PaymentPlan> PaymentPlans { get; set; }
+        public List<RefreshPaymentPlan> RefreshPaymentPlans { get; set; }
     }
 }

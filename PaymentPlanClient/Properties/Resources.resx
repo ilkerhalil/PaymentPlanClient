@@ -132,4 +132,19 @@
   <data name="LBTLoginClient_Url" xml:space="preserve">
     <value>/Login</value>
   </data>
+  <data name="LBTAddress_Url" xml:space="preserve">
+    <value>/Adress</value>
+  </data>
+  <data name="LBTEmail_Url" xml:space="preserve">
+    <value>/Email</value>
+  </data>
+  <data name="LBTPhone_Url" xml:space="preserve">
+    <value>/Phone</value>
+  </data>
+  <data name="LBTComplaint_Url" xml:space="preserve">
+    <value>/Complaint</value>
+  </data>
+  <data name="LBTAppointment_Url" xml:space="preserve">
+    <value>/Appointment</value>
+  </data>
 </root>
