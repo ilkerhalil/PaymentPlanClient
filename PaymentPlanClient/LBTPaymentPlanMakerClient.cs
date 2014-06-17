@@ -21,6 +21,29 @@
             this.restClient = restClient;
         }
 
+
+        public AuthTicketResponse CreateTicket(AuthTicketRequest authTicketRequest)
+        {
+            var restRequest = new RestRequest(Resources.LBTLoginClient_Url, Method.PUT) { RequestFormat = DataFormat.Json };
+            restRequest.AddBody(authTicketRequest);
+            var response = restClient.Execute<AuthTicketResponse>(restRequest);
+            IRestResponse = response;
+            if (response.StatusCode != HttpStatusCode.OK) throw new Exception(response.Content);
+            if (response.Data != null) return response.Data;
+            throw new Exception(response.Content);
+        }
+
+        public ValidateTicketResponse ValidationTicket(ValidateTicketRequest validateTicketRequest)
+        {
+            var restRequest = new RestRequest(Resources.LBTLoginClient_Url, Method.POST) { RequestFormat = DataFormat.Json };
+            restRequest.AddBody(validateTicketRequest);
+            var response = restClient.Execute<ValidateTicketResponse>(restRequest);
+            IRestResponse = response;
+            if (response.StatusCode != HttpStatusCode.OK) throw new Exception(response.Content);
+            if (response.Data != null) return response.Data;
+            throw new Exception(response.Content);
+        }
+
         public PaymentPlanPayTypeResponse GetPaymentPlanTypes(PaymentPlanPayTypeRequest paymentPlanPayTypeRequest)
         {
             var url = string.Format(Resources.LbtPaymentPlanMakerClient_GetPaymentPlanType_Url, paymentPlanPayTypeRequest.LoanId);

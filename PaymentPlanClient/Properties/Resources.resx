@@ -129,4 +129,7 @@
   <data name="LbtPaymentPlanMakerClient_RefreshPaymentPlan_api_RefreshPayment_Url" xml:space="preserve">
     <value>/RefreshPaymentPlan</value>
   </data>
+  <data name="LBTLoginClient_Url" xml:space="preserve">
+    <value>/Login</value>
+  </data>
 </root>

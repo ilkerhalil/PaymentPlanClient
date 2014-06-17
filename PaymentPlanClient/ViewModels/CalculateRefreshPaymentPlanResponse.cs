@@ -15,6 +15,6 @@
         /// 
         /// </summary>
         [DataMember]
-        public IEnumerable<RefreshPaymentPlan> RefreshPaymentPlans { get; set; }
+        public List<RefreshPaymentPlan> RefreshPaymentPlans { get; set; }
     }
 }

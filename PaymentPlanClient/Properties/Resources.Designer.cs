@@ -61,6 +61,15 @@ namespace PaymentPlanClient.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to /Login.
+        /// </summary>
+        internal static string LBTLoginClient_Url {
+            get {
+                return ResourceManager.GetString("LBTLoginClient_Url", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to /PaymentPlan?LoanId={0}.
         /// </summary>
         internal static string LbtPaymentPlanMakerClient_GetPaymentPlanType_Url {
