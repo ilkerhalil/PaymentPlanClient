@@ -6,30 +6,7 @@ namespace PaymentPlanClient.Entity
     [DataContract]
     public class RefreshPaymentPlan
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="refreshPaymentPlanId"></param>
-        /// <param name="oldInstallmentDate"></param>
-        /// <param name="newInstallmentDate"></param>
-        /// <param name="oldPaymentAmount"></param>
-        /// <param name="newPaymentAmount"></param>
-        public RefreshPaymentPlan(int refreshPaymentPlanId, DateTime oldInstallmentDate, DateTime newInstallmentDate, decimal oldPaymentAmount, decimal newPaymentAmount)
-        {
-            this.RefreshPaymentPlanId = refreshPaymentPlanId;
-            this.OldInstallmentDate = oldInstallmentDate;
-            this.NewInstallmentDate = newInstallmentDate;
-            this.OldPaymentAmount = oldPaymentAmount;
-            this.NewPaymentAmount = newPaymentAmount;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RefreshPaymentPlan()
-        {
-
-        }
+        
 
         /// <summary>
         /// 
