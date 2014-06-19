@@ -35,6 +35,7 @@
                 var smsCode = Console.ReadLine();
                 var validationRequest = new ValidateTicketRequest { BirthDate = authTicketRequest.BirthDate, HttpUserAgent = string.Empty, IpAdress = string.Empty, MotherName = authTicketRequest.MotherName, PhoneNo = authTicketRequest.PhoneNo, SessionId = string.Empty, SmsCode = smsCode, Tckn = authTicketRequest.Tckn, Ticket = t.Ticket };
                 var s = paymentPlanMakerClient.ValidationTicket(validationRequest);
+                var iller = paymentPlanMakerClient.GetIlCollection();
                 var k =
                     paymentPlanMakerClient.CalculateRefreshPaymentPlan(
                         new CalculateRefreshPaymentPlanRequest(494444, DateTime.Now.ToLocalTime(), RefreshPaymentPlanType.AddLastPayment));
