@@ -46,4 +46,9 @@
             return string.Format("AdresKodu: {0}, AdresTipi: {1}, Il: {2}, Ilce: {3}, Adres: {4}, Guncel: {5}", this.AdresKodu, this.AdresTipi, this.Il, this.Ilce, this.Adres, this.Guncel);
         }
     }
+
+    public enum AdressType:byte
+    {
+
+    }
 }

@@ -2,6 +2,8 @@
 {
     using System.Runtime.Serialization;
 
+    using PaymentPlanClient.Entity;
+
     /// <summary>
     /// Adres eklemek için bu tip ile request yapılır
     /// </summary>

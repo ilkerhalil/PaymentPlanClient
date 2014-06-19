@@ -1,4 +1,4 @@
-﻿namespace PaymentPlanClient.ViewModels.AddressManipulation
+﻿namespace PaymentPlanClient.Entity
 {
     using System.Runtime.Serialization;
 

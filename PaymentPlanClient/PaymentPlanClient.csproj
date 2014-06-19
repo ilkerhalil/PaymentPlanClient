@@ -80,7 +80,7 @@
     </Compile>
     <Compile Include="ViewModels\AddressManipulation\AddAdressRequest.cs" />
     <Compile Include="ViewModels\AddressManipulation\AddAdressResponse.cs" />
-    <Compile Include="ViewModels\AddressManipulation\AddressType.cs" />
+    <Compile Include="Entity\AddressType.cs" />
     <Compile Include="ViewModels\AddressManipulation\DeleteAdressRequest.cs" />
     <Compile Include="ViewModels\AddressManipulation\DeleteAdressResponse.cs" />
     <Compile Include="ViewModels\AddressManipulation\IlRequestResponse.cs" />
