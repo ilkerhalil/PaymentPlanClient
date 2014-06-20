@@ -185,7 +185,7 @@
         #region PhoneManipulation
         public AddAdressResponse AddPhone(AddPhoneRequest addPhoneRequest)
         {
-            var restRequest = new RestRequest(Resources.LBTEmail_Url, Method.DELETE) { RequestFormat = DataFormat.Json };
+            var restRequest = new RestRequest(Resources.LBTPhone_Url, Method.DELETE) { RequestFormat = DataFormat.Json };
             restRequest.AddBody(addPhoneRequest);
             var response = restClient.Execute<AddAdressResponse>(restRequest);
             IRestResponse = response;
@@ -196,7 +196,7 @@
 
         public DeletePhoneResponse DeletePhone(DeletePhoneRequest deletePhoneRequest)
         {
-            var restRequest = new RestRequest(Resources.LBTEmail_Url, Method.DELETE) { RequestFormat = DataFormat.Json };
+            var restRequest = new RestRequest(Resources.LBTPhone_Url, Method.DELETE) { RequestFormat = DataFormat.Json };
             restRequest.AddBody(deletePhoneRequest);
             var response = restClient.Execute<DeletePhoneResponse>(restRequest);
             IRestResponse = response;
