@@ -183,11 +183,11 @@
         #endregion
 
         #region PhoneManipulation
-        public AddAdressResponse AddPhone(AddPhoneRequest addPhoneRequest)
+        public AddPhoneResponse AddPhone(AddPhoneRequest addPhoneRequest)
         {
             var restRequest = new RestRequest(Resources.LBTPhone_Url, Method.POST) { RequestFormat = DataFormat.Json };
             restRequest.AddBody(addPhoneRequest);
-            var response = restClient.Execute<AddAdressResponse>(restRequest);
+            var response = restClient.Execute<AddPhoneResponse>(restRequest);
             IRestResponse = response;
             if (response.StatusCode != HttpStatusCode.OK) throw new PaymentPlanClientException(response.Content);
             if (response.Data != null) return response.Data;

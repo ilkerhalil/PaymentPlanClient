@@ -124,7 +124,7 @@
     <value>/PaymentPlan</value>
   </data>
   <data name="LBTPaymentPlanMakerClient_ServiceUrl" xml:space="preserve">
-    <value>https://fb.lbtvarlik.com.tr/lbtwebcentric</value>
+    <value>https://fb.lbtvarlik.com.tr/webcentricapi/api</value>
   </data>
   <data name="LbtPaymentPlanMakerClient_RefreshPaymentPlan_api_RefreshPayment_Url" xml:space="preserve">
     <value>/RefreshPaymentPlan</value>

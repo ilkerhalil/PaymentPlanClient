@@ -133,7 +133,7 @@ namespace PaymentPlanClient.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://fb.lbtvarlik.com.tr/lbtwebcentric.
+        ///   Looks up a localized string similar to https://fb.lbtvarlik.com.tr/webcentricapi/api.
         /// </summary>
         internal static string LBTPaymentPlanMakerClient_ServiceUrl {
             get {
