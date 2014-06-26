@@ -25,6 +25,17 @@
         /// </summary>
         [DataMember]
         public string Telefon { get; set; }
+
+        [DataMember]
+        public string TelefonF
+        {
+            get
+            {
+                return string.Format("{0:(###) ### ####}", long.Parse(Telefon));
+            }
+        }
+
+
         /// <summary>
         /// 
         /// </summary>

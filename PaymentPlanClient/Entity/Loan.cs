@@ -19,7 +19,15 @@
         /// 
         /// </summary>
         [DataMember]
-        public DateTime Tarih { get; set; }
+        public DateTime? Tarih { get; set; }
+
+        public string TarihF
+        {
+            get
+            {
+                return Tarih.HasValue ? Tarih.Value.ToLocalTime().ToString("dd.MM.yyyy") : null;
+            }
+        }
 
 
         /// <summary>
@@ -46,5 +54,13 @@
         /// </summary>
         [DataMember]
         public decimal? GuncelBorc { get; set; }
+
+        public string GuncelBorcF {
+            get
+            {
+                return GuncelBorc.HasValue ? GuncelBorc.Value.ToString("C") : "0";
+            }
+        }
+
     }
 }

@@ -6,7 +6,7 @@ namespace PaymentPlanClient.Entity
     [DataContract]
     public class RefreshPaymentPlan
     {
-        
+
 
         /// <summary>
         /// 
@@ -18,7 +18,11 @@ namespace PaymentPlanClient.Entity
         /// 
         /// </summary>
         [DataMember]
-        public DateTime OldInstallmentDate { get; set; }
+        public DateTime? OldInstallmentDate { get; set; }
+
+
+
+
 
         /// <summary>
         /// 
@@ -30,12 +34,28 @@ namespace PaymentPlanClient.Entity
         /// 
         /// </summary>
         [DataMember]
-        public Decimal OldPaymentAmount { get; set; }
+        public decimal? OldPaymentAmount { get; set; }
+
+        public string OldPaymentAmountF
+        {
+            get
+            {
+                return OldPaymentAmount.HasValue ? OldPaymentAmount.Value.ToString("C") : "0";
+            }
+        }
 
         /// <summary>
         /// 
         /// </summary>
         [DataMember]
-        public Decimal NewPaymentAmount { get; set; }
+        public decimal? NewPaymentAmount { get; set; }
+
+        public string NewPaymentAmountF
+        {
+            get
+            {
+                return NewPaymentAmount.HasValue ? NewPaymentAmount.Value.ToString("C") : "0";
+            }
+        }
     }
 }

@@ -23,11 +23,29 @@
         /// </summary>
         [DataMember]
         public decimal? Tutar { get; set; }
+
+        public string TutarF
+        {
+            get
+            {
+                return Tutar.HasValue ? Tutar.Value.ToString("C") : "0";
+            }
+        }
+
         /// <summary>
         /// 
         /// </summary>
         [DataMember]
         public decimal? Odenmis { get; set; }
+
+        public string OdenmisF
+        {
+            get
+            {
+                return Odenmis.HasValue ? Odenmis.Value.ToString("C") : "0";
+            }
+        }
+
         /// <summary>
         /// 
         /// </summary>

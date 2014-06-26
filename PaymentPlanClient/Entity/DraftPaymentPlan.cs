@@ -41,9 +41,17 @@ namespace PaymentPlanClient.Entity
         /// tutar
         /// </summary>
         [DataMember]
-        public decimal Tutar { get; set; }
+        public decimal? Tutar { get; set; }
 
+        public string TutarF
+        {
+            get
+            {
+                return Tutar.HasValue ? Tutar.Value.ToString("C") : "0";
+            }
+        }
 
+        
         [DataMember]
         public List<DraftPaymentPlanDetail> DraftPaymentPlanDetails { get; set; }
         /// <summary>
@@ -58,13 +66,34 @@ namespace PaymentPlanClient.Entity
         public decimal? Bsmv { get; set; }
         /// <summary>
         /// faiz tutarý
+        
         /// </summary>
+
+
+        public string BsmvF
+        {
+            get
+            {
+                return Bsmv.HasValue ? Bsmv.Value.ToString("C") : "0";
+            }
+        }
+
+
 
         [DataMember]
         public decimal? FaizTutari { get; set; }
         /// <summary>
         /// banka kodu
         /// </summary>
+        /// 
+        public string FaizTutariF
+        {
+            get
+            {
+                return FaizTutari.HasValue ? FaizTutari.Value.ToString("C") : "0";
+            }
+        }
+
 
         [DataMember]
         public short? BankCode { get; set; }
@@ -73,8 +102,15 @@ namespace PaymentPlanClient.Entity
         /// planýn ana parasý
         /// </summary>
         [DataMember]
-        public decimal PlanAnaPara { get; set; }
+        public decimal? PlanAnaPara { get; set; }
 
+        public string PlanAnaParaF
+        {
+            get
+            {
+                return PlanAnaPara.HasValue ? PlanAnaPara.Value.ToString("C") : "0";
+            }
+        }
 
         public override string ToString()
         {
