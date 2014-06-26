@@ -6,8 +6,8 @@ namespace PaymentPlanClient.Entity
     public enum AppointmentType : byte
     {
         [EnumMember]
-        FaceOfFace = 1,
+        Yuzyuze = 1,
         [EnumMember]
-        OnPhone = 2
+        Telefonla = 2
     }
 }

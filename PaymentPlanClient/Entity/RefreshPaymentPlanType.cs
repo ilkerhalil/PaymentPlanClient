@@ -9,11 +9,11 @@
         /// 
         /// </summary>
         [EnumMember]
-        AddLastPayment = 1,
+        SonTakiteEkle = 1,
         /// <summary>
         /// 
         /// </summary>
         [EnumMember]
-        AddNewPayment = 2
+        YeniTaksitEkle = 2
     }
 }
