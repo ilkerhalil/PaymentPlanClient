@@ -21,6 +21,14 @@
         [DataMember]
         public DateTime Tarih { get; set; }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [DataMember]
+        public string ParaBirimi { get; set; }
+
+
         /// <summary>
         /// 
         /// </summary>
