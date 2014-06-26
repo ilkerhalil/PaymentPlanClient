@@ -20,6 +20,13 @@ namespace PaymentPlanClient.Entity
         [DataMember]
         public DateTime? OldInstallmentDate { get; set; }
 
+        public string OldInstallmentDateF
+        {
+            get
+            {
+                return OldInstallmentDate.HasValue ? OldInstallmentDate.Value.ToString("dd.MM.YYYY") : "0";
+            }
+        }
 
 
 
@@ -28,7 +35,15 @@ namespace PaymentPlanClient.Entity
         /// 
         /// </summary>
         [DataMember]
-        public DateTime NewInstallmentDate { get; set; }
+        public DateTime? NewInstallmentDate { get; set; }
+
+        public string NewInstallmentDateF
+        {
+            get
+            {
+                return NewInstallmentDate.HasValue ? NewInstallmentDate.Value.ToString("dd.MM.YYYY") : "0";
+            }
+        }
 
         /// <summary>
         /// 
