@@ -46,6 +46,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,6 +73,7 @@
     <Compile Include="Entity\Phone.cs" />
     <Compile Include="Entity\PhoneType.cs" />
     <Compile Include="Exception\PaymentPlanClientException.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="LBTPaymentPlanMakerClient.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

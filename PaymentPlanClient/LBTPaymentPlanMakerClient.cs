@@ -1,8 +1,11 @@
 ﻿namespace PaymentPlanClient
 {
     using System.Net;
+    using System.Web;
+
     using LBTCustomerCentricWebsite.WebApi2.ViewModel;
     using PaymentPlanClient.Exception;
+    using PaymentPlanClient.Extensions;
     using PaymentPlanClient.Properties;
     using PaymentPlanClient.ViewModels.AddressManipulation;
     using PaymentPlanClient.ViewModels.AppointmentManipulation;
@@ -33,6 +36,7 @@
         #region Authentication
         public AuthTicketResponse CreateTicket(AuthTicketRequest authTicketRequest)
         {
+            if (string.IsNullOrWhiteSpace(authTicketRequest.IpAdress)) authTicketRequest.IpAdress = HttpContext.Current.GetIpAddress();
             var restRequest = new RestRequest(Resources.LBTLoginClient_Url, Method.PUT) { RequestFormat = DataFormat.Json };
             restRequest.AddBody(authTicketRequest);
             var response = restClient.Execute<AuthTicketResponse>(restRequest);
