@@ -37,6 +37,8 @@
         public AuthTicketResponse CreateTicket(AuthTicketRequest authTicketRequest)
         {
             if (string.IsNullOrWhiteSpace(authTicketRequest.IpAdress)) authTicketRequest.IpAdress = HttpContext.Current.GetIpAddress();
+            if (string.IsNullOrWhiteSpace(authTicketRequest.HttpUserAgent)) authTicketRequest.HttpUserAgent = HttpContext.Current.GetUserAgent();
+            if (string.IsNullOrWhiteSpace(authTicketRequest.SessionId)) authTicketRequest.SessionId = HttpContext.Current.GetSessionId();
             var restRequest = new RestRequest(Resources.LBTLoginClient_Url, Method.PUT) { RequestFormat = DataFormat.Json };
             restRequest.AddBody(authTicketRequest);
             var response = restClient.Execute<AuthTicketResponse>(restRequest);
